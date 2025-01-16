@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="0AW3v8W7R5oKKgm7rb2BmAYZOVp-sy-HR8dfkEqMXPY" />
-  
-    <title>Perfil Acadêmico - Mateus de Araújo Fernandes</title>
+    <title>Academic Profile - Mateus de Araújo Fernandes</title>
+    <!-- Link para Font Awesome (para usar ícones) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,14 +18,49 @@
         }
 
         header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             background-color: #00539b;
             color: white;
-            padding: 15px 0;
-            text-align: center;
+            padding: 15px 20px;
+        }
+
+        header img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        header .profile-info {
+            display: flex;
+            align-items: center;
         }
 
         header h1 {
             margin: 0;
+            font-size: 1.8rem;
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+            font-size: 1rem;
+        }
+
+        header .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        header .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        header .social-links a:hover {
+            color: #f4f4f9;
         }
 
         nav {
@@ -74,8 +110,26 @@
 </head>
 <body>
     <header>
-        <h1>Mateus de Araújo Fernandes</h1>
-        <p>Perfil Acadêmico</p>
+        <!-- Foto do perfil -->
+        <div class="profile-info">
+            <img src="your-photo.jpg" alt="Mateus de Araújo Fernandes">
+            <div>
+                <h1>Mateus de Araújo Fernandes</h1>
+                <p>Academic Profile</p>
+            </div>
+        </div>
+        <!-- Links de redes sociais -->
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/seu-perfil" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=seu-id" target="_blank" title="Google Scholar">
+                <i class="fas fa-graduation-cap"></i>
+            </a>
+            <a href="http://lattes.cnpq.br/seu-id" target="_blank" title="Currículo Lattes">
+                <i class="fas fa-file-alt"></i>
+            </a>
+        </div>
     </header>
 
     <nav>
@@ -89,36 +143,36 @@
         <section id="publications">
             <h2>Publications</h2>
             <ul>
-                <li>"[Título da publicação]" - [Revista/Evento], [Ano]</li>
-                <li>"[Título da publicação]" - [Revista/Evento], [Ano]</li>
+                <li>"[Publication Title]" - [Journal/Event], [Year]</li>
+                <li>"[Publication Title]" - [Journal/Event], [Year]</li>
             </ul>
         </section>
 
         <section id="talks">
             <h2>Talks</h2>
             <ul>
-                <li>"[Título da palestra]" - [Evento/Organização], [Ano]</li>
-                <li>"[Título da palestra]" - [Evento/Organização], [Ano]</li>
+                <li>"[Talk Title]" - [Event/Organization], [Year]</li>
+                <li>"[Talk Title]" - [Event/Organization], [Year]</li>
             </ul>
         </section>
 
         <section id="cv">
             <h2>CV</h2>
-            <p>Faça o download do meu <a href="seu-cv.pdf" target="_blank">Currículo (CV)</a>.</p>
+            <p>Download my <a href="your-cv.pdf" target="_blank">Curriculum Vitae (CV)</a>.</p>
         </section>
 
         <section id="collaborators">
             <h2>Collaborators</h2>
-            <p>Aqui estão algumas das pessoas com as quais colaborei em projetos de pesquisa e inovação:</p>
+            <p>Here are some of the people I have collaborated with on research and innovation projects:</p>
             <ul>
-                <li>[Nome do colaborador] - [Instituição ou projeto]</li>
-                <li>[Nome do colaborador] - [Instituição ou projeto]</li>
+                <li>[Collaborator Name] - [Institution or Project]</li>
+                <li>[Collaborator Name] - [Institution or Project]</li>
             </ul>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2023 Mateus de Araújo Fernandes. Todos os direitos reservados.</p>
+        <p>&copy; 2023 Mateus de Araújo Fernandes. All rights reserved.</p>
     </footer>
 </body>
 </html>
