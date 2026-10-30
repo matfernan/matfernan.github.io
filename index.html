@@ -1,233 +1,637 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="0AW3v8W7R5oKKgm7rb2BmAYZOVp-sy-HR8dfkEqMXPY" />
-    <title>Academic Profile - Mateus de Araujo Fernandes</title>
-    <!-- Link para Font Awesome (para usar ícones) -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #00539b;
-            color: white;
-            padding: 15px 20px;
-        }
+  <title>Academic Profile — Mateus de Araujo Fernandes</title>
+  <meta
+    name="description"
+    content="Academic profile, publications, talks, and collaborators of Mateus de Araujo Fernandes."
+  >
 
-        header img {
-            border-radius: 50%;
-            width: 80px;
-            height: 100px;
-            margin-right: 20px;
-        }
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #102a43;
+      --blue: #1769aa;
+      --blue-dark: #12558a;
+      --teal: #38b2ac;
+      --ink: #243b53;
+      --muted: #627d98;
+      --paper: #ffffff;
+      --background: #f3f7fb;
+      --line: #d9e2ec;
+      --shadow: 0 12px 32px rgba(16, 42, 67, 0.08);
+      --radius: 18px;
+      --content-width: 1040px;
+    }
 
-        header .profile-info {
-            display: flex;
-            align-items: center;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 1.8rem;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        header p {
-            margin: 5px 0 0 0;
-            font-size: 1rem;
-        }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--ink);
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.65;
+    }
 
-        header .social-links {
-            display: flex;
-            gap: 15px;
-        }
+    a {
+      color: var(--blue);
+      text-underline-offset: 3px;
+    }
 
-        header .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
+    a:hover {
+      color: var(--blue-dark);
+    }
 
-        header .social-links a:hover {
-            color: #f4f4f9;
-        }
+    a:focus-visible {
+      outline: 3px solid var(--teal);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #004080;
-            padding: 10px;
-        }
+    .hero {
+      color: #fff;
+      background:
+        radial-gradient(ellipse at 85% 15%, rgba(56, 178, 172, 0.28), transparent 35%),
+        linear-gradient(135deg, #102a43 0%, #174f78 100%);
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: bold;
-        }
+    .hero-inner {
+      width: min(var(--content-width), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 54px 0 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      min-width: 0;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 15px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    .profile-photo {
+      width: 112px;
+      height: 112px;
+      flex: 0 0 112px;
+      object-fit: cover;
+      object-position: center;
+      border: 4px solid rgba(255, 255, 255, 0.85);
+      border-radius: 50%;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    }
 
-        section {
-            margin-bottom: 20px;
-        }
+    .eyebrow {
+      margin: 0 0 6px;
+      color: #a8e4df;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-        h2 {
-            color: #00539b;
-            border-bottom: 2px solid #00539b;
-            padding-bottom: 5px;
-        }
+    h1 {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      letter-spacing: -0.04em;
+      line-height: 1.15;
+    }
 
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #00539b;
-            color: white;
-            margin-top: 20px;
-        }
-    </style>
+    .profile-subtitle {
+      margin: 10px 0 0;
+      color: #d9e8f2;
+      font-size: 1.05rem;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 9px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      border-radius: 999px;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 160ms ease, transform 160ms ease;
+    }
+
+    .social-links a:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.13);
+      transform: translateY(-2px);
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      width: min(var(--content-width), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 0;
+    }
+
+    .nav-inner a {
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 650;
+      text-decoration: none;
+      transition: color 160ms ease, background-color 160ms ease;
+    }
+
+    .nav-inner a:hover {
+      color: var(--blue-dark);
+      background: #eaf3f9;
+    }
+
+    main {
+      width: min(var(--content-width), calc(100% - 40px));
+      margin: 34px auto 56px;
+    }
+
+    .section {
+      margin-bottom: 28px;
+      padding: clamp(22px, 4vw, 36px);
+      border: 1px solid rgba(217, 226, 236, 0.8);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      scroll-margin-top: 90px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin: 0 0 22px;
+    }
+
+    .section-heading::before {
+      width: 5px;
+      height: 1.25em;
+      flex: 0 0 5px;
+      border-radius: 99px;
+      background: var(--teal);
+      content: "";
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(1.35rem, 3vw, 1.75rem);
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .publication {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fbfdff;
+      transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .publication:hover {
+      transform: translateY(-2px);
+      border-color: #a9c9df;
+      box-shadow: 0 8px 20px rgba(16, 42, 67, 0.07);
+    }
+
+    .publication-title {
+      margin: 0;
+      font-size: 1.02rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .publication-title a {
+      color: var(--navy);
+      text-decoration-color: #a9c9df;
+      text-decoration-thickness: 1px;
+    }
+
+    .publication-title a:hover {
+      color: var(--blue);
+      text-decoration-color: currentColor;
+    }
+
+    .publication-authors {
+      margin: 8px 0 2px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .publication-venue {
+      margin: 0;
+      color: var(--blue-dark);
+      font-size: 0.88rem;
+      font-weight: 650;
+    }
+
+    .talk-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .talk-list li {
+      position: relative;
+      padding: 15px 18px 15px 42px;
+      border-radius: 12px;
+      background: #f4f8fb;
+    }
+
+    .talk-list li::before {
+      position: absolute;
+      top: 16px;
+      left: 18px;
+      color: var(--teal);
+      font-weight: 800;
+      content: "↗";
+    }
+
+    .link-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .link-list a {
+      font-weight: 650;
+    }
+
+    .section-intro {
+      margin: -8px 0 18px;
+      color: var(--muted);
+    }
+
+    .collaborator-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .collaborator-list li {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fbfdff;
+    }
+
+    footer {
+      padding: 24px 20px;
+      color: #d9e8f2;
+      background: var(--navy);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 720px) {
+      .hero-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 38px 0 30px;
+      }
+
+      .social-links {
+        justify-content: flex-start;
+      }
+
+      .profile-photo {
+        width: 92px;
+        height: 92px;
+        flex-basis: 92px;
+      }
+
+      .collaborator-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-inner,
+      .nav-inner,
+      main {
+        width: min(100% - 28px, var(--content-width));
+      }
+
+      .profile {
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .profile-photo {
+        width: 76px;
+        height: 76px;
+        flex-basis: 76px;
+      }
+
+      .social-links a {
+        min-height: 38px;
+        padding: 7px 11px;
+        font-size: 0.82rem;
+      }
+
+      .nav-inner {
+        justify-content: flex-start;
+      }
+
+      .nav-inner a {
+        padding: 7px 10px;
+        font-size: 0.86rem;
+      }
+
+      main {
+        margin-top: 20px;
+      }
+
+      .section {
+        padding: 20px 16px;
+      }
+
+      .publication {
+        padding: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <!-- Foto do perfil -->
-        <div class="profile-info">
-            <img src="Foto_perfil3.png" alt="Mateus de Araujo Fernandes">
-            <div>
-                <h1>Mateus de Araujo Fernandes</h1>
-                <p>Academic Profile</p>
-            </div>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="profile">
+        <img
+          class="profile-photo"
+          src="Foto_perfil3.png"
+          alt="Mateus de Araujo Fernandes"
+        >
+        <div>
+          <p class="eyebrow">Academic profile</p>
+          <h1>Mateus de Araujo Fernandes</h1>
+          <p class="profile-subtitle">Research, publications, and talks</p>
         </div>
-        <!-- Links de redes sociais -->
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/mateus-fernandes-b879a851/" target="_blank" title="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://scholar.google.com/citations?hl=pt-BR&user=p2_aTCkAAAAJ" target="_blank" title="Google Scholar">
-                <i class="fas fa-graduation-cap"></i>
-            </a>
-            <a href="http://lattes.cnpq.br/2920827206617950" target="_blank" title="Currículo Lattes">
-                <i class="fas fa-file-alt"></i>
-            </a>
-        </div>
-    </header>
+      </div>
 
-    <nav>
-        <a href="#publications">Publications</a>
-        <a href="#talks">Talks</a>
-        <a href="#cv">CV & LinkedIn</a>
-        <a href="#collaborators">Collaborators</a>
-    </nav>
-
-    <div class="container">
-        <section id="publications">
-            <h2>Selected Publications</h2>
-            <ul>
-                <li><a href="https://github.com/matfernan/matfernan.github.io/blob/main/BHP_CO2_Arxiv.pdf" target="_blank">"Hybrid Physics-Data Driven Approach for Pressure Estimation in CO2-Rich Gas Injection Operations"</a></li>
-                <p>M. A. Fernandes, E. Gildin, M. A. Sampaio</p>
-                <p>Preprint, 2026</p>
-                <p> </p>
-                <li><a href="https://ieeexplore.ieee.org/document/11358459" target="_blank">"Rig Scheduling in Stochastic Oilfield Operations Using Fuzzy Inference and Monte Carlo Simulation"</a></li>
-                <p>M. A. Fernandes, E. Gildin, M. A. Sampaio</p>
-                <p>12th International Conference on Soft Computing & Machine Intelligence (ISCMI), 2025</p>
-                <p> </p>
-                <li><a href="https://ieeexplore.ieee.org/document/11114068" target="_blank">"AI-Driven Prescriptive Analytics for Hydrate Mitigation in Offshore Petroleum Production"</a></li>
-                <p>M. A. Fernandes, R. O. Rabelo, E. Gildin, M. A. Sampaio</p>
-                <p>IEEE International Conference on AI and Data Analytics (ICAD), 2025</p>
-                <p> </p>
-                <li><a href="https://www.preprints.org/manuscript/202509.1717/v1" target="_blank">"Machine Learning-Based Soft Sensors for Reliable Bottom-Hole Pressure Estimation"</a></li>
-                <p>M. A. Fernandes, E. Gildin, M. A. Sampaio</p>
-                <p>Preprint, 2025</p>
-                <p> </p>
-                <li><a href="https://arxiv.org/abs/2508.18289" target="_blank">"Data-driven models for production forecasting and decision supporting in petroleum reservoirs"</a></li>
-                <p>M. A. Fernandes, M. M. Furlanetti, E. Gildin, M. A. Sampaio</p>
-                <p>Preprint, 2025</p>
-                <p> </p>
-                <li><a href="https://arxiv.org/abs/2507.01048" target="_blank">"3W Dataset 2.0.0: a realistic and public dataset with rare undesirable real events in oil wells"</a></li>
-                <p>R. E. Vaz Vargas, C. J. Munaro, M. A. Fernandes et al.</p>
-                <p>Preprint, 2025</p>
-                <p> </p>
-                <li><a href="https://ieeexplore.ieee.org/document/10903375" target="_blank">"Data-driven Estimation of Flowing Bottom-Hole Pressure in Petroleum Wells using Long Short-Term Memory"</a></li>
-                <p>M. A. Fernandes, E. Gildin, M. A. Sampaio</p>
-                <p>IEEE International Conference on Machine Learning and Applications (ICMLA), 2024</p>
-                <p> </p>
-                <li><a href="https://doi.org/10.4043/32950-MS" target="_blank">"Data-Driven Workflow for Categorization of Brines Applied to a Pre-Salt Field"</a></li>
-                <p>M. A. Fernandes, E. Gildin, M. A. Sampaio</p>
-                <p>Offshore Technology Conference Brasil, 2023</p>
-                <p> </p>
-                <li><a href="https://github.com/matfernan/matfernan.github.io/blob/main/Paper_ROG18_TransGas.pdf" target="_blank">"Challenges of a Mature Onshore Field in the Transition to Natural Gas as the Main Fluid" (available in Portuguese)</a></li>
-                <p>M. A. Fernandes, F. T. A. Costa, N. H. S. Almeida</p>
-                <p>Rio Oil & Gas, 2018</p>
-                <p> </p>
-                <li><a href="https://github.com/matfernan/matfernan.github.io/blob/main/Paper_ROG18_Knowledge.pdf" target="_blank">"Knowledge Management in Petroleum Industry a Case Study for Petrobras/UO-SEAL" (available in Portuguese)</a></li>
-                <p>R. G. S. A. Fernandes, M. A. Fernandes</p>
-                <p>Rio Oil & Gas, 2018</p>
-                <p> </p>
-                <li><a href="https://github.com/matfernan/matfernan.github.io/blob/main/Paper_ROG16_Multidisc.pdf" target="_blank">"Multidisciplinary Vision is the Key to Making a High Stratigraphic and Structural Complexity Oil Field Profitable Under an Adverse Costs Scenario"</a></li>
-                <p>F. T. A. Costa, F. A. M. Vila Nova, M. A. Fernandes</p>
-                <p>Rio Oil & Gas, 2016</p>
-                <p> </p>
-                <li><a href="https://github.com/matfernan/matfernan.github.io/blob/main/Paper_ROG14_Fuzzy.pdf" target="_blank">"Building Reservoir Quality Maps for a Geologically Complex Oilfield by using Fuzzy Logic and Kriging" (available in Portuguese)</a></li>
-                <p>M. A. Fernandes, F. A. M. Vila Nova, F. T. A. Costa, S. L. F. Furtado</p>
-                <p>Rio Oil & Gas, 2014</p>
-                <p> </p>
-            </ul>
-        </section>
-
-        <section id="talks">
-            <h2>Talks</h2>
-            <ul>
-                <li>"Machine Learning-Based Soft Sensors for Reliable Bottom-Hole Pressure Estimation in IWC Wells" - SPE Workshop: Integrated Intelligent Well Completion, Rio de Janeiro, 2025</li>
-                <li>"Data-driven Estimation of Flowing Bottom-Hole Pressure in Petroleum Wells using Long Short-Term Memory" - 18th U.S. National Congress on Computational Mechanics (USNCCM18), Chicago, 2025</li>
-                <li>"AI-Driven Prescriptive Analytics for Hydrate Mitigation in Offshore Petroleum Production" - IEEE International Conference on AI and Data Analytics (ICAD 2025), Medford, 2025</li>
-                <li>"Data-driven Estimation of Flowing Bottom-Hole Pressure in Petroleum Wells using Long Short-Term Memory" - IEEE International Conference on Machine Learning and Applications (ICMLA 2024), Miami, 2024</li>
-
-            </ul>
-        </section>
-
-        <section id="cv">
-            <h2>CV</h2>
-            <p>Check my <a href="http://lattes.cnpq.br/2920827206617950" target="_blank">Curriculum Vitae (CV)</a>.</p>
-            <p>Connect with me at <a href="https://www.linkedin.com/in/mateus-fernandes-b879a851/" target="_blank">LinkedIn</a>.</p>
-            <p>Full list of Publications available at my <a href="https://scholar.google.com/citations?user=seu-id&user=p2_aTCkAAAAJ" target="_blank">Google Scholar Page</a>.</p>
-        </section>
-
-        <section id="collaborators">
-            <h2>Collaborators</h2>
-            <p>Here are some of the professionals I have collaborated with on research and innovation projects:</p>
-            <ul>
-                <li>Prof. Marcio Augusto Sampaio Pinto - University of São Paulo (USP)</li>
-                <li>Prof. Eduardo Gildin - Texas A&M University</li>
-                <li>Michael Miguel Furlanetti - Petrobras</li>
-                <li>Ricardo E. Vaz Vargas - Petrobras</li>
-                <li>Samia Lima Freire Furtado - Petrobras</li>
-                <li>Francisco Tadeu Alves da Costa - Petrobras (retired)</li>
-            </ul>
-        </section>
+      <div class="social-links" aria-label="Profile links">
+        <a href="https://www.linkedin.com/in/mateus-fernandes-b879a851/"
+           target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?hl=pt-BR&amp;user=p2_aTCkAAAAJ"
+           target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a href="http://lattes.cnpq.br/2920827206617950"
+           target="_blank" rel="noopener noreferrer">Currículo Lattes</a>
+      </div>
     </div>
+  </header>
 
-    <footer>
-        <p>&copy; 2025 Mateus de Araujo Fernandes. All rights reserved.</p>
-    </footer>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#publications">Publications</a>
+      <a href="#talks">Talks</a>
+      <a href="#cv">CV &amp; Links</a>
+      <a href="#collaborators">Collaborators</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section" id="publications">
+      <h2 class="section-heading">Selected Publications</h2>
+
+      <ul class="publication-list">
+        <li class="publication">
+          <p class="publication-title">
+            <a href="https://github.com/matfernan/matfernan.github.io/blob/main/BHP_CO2_Arxiv.pdf"
+               target="_blank" rel="noopener noreferrer">
+              Hybrid Physics-Data Driven Approach for Pressure Estimation in CO2-Rich Gas Injection Operations
+            </a>
+          </p>
+          <p class="publication-authors">M. A. Fernandes, E. Gildin, M. A. Sampaio</p>
+          <p class="publication-venue">Preprint, 2026</p>
+        </li>
+
+        <li class="publication">
+          <p class="publication-title">
+            <a href="https://ieeexplore.ieee.org/document/11358459"
+               target="_blank" rel="noopener noreferrer">
+              Rig Scheduling in Stochastic Oilfield Operations Using Fuzzy Inference and Monte Carlo Simulation
+            </a>
+          </p>
+          <p class="publication-authors">M. A. Fernandes, E. Gildin, M. A. Sampaio</p>
+          <p class="publication-venue">12th International Conference on Soft Computing &amp; Machine Intelligence (ISCMI), 2025</p>
+        </li>
+
+        <li class="publication">
+          <p class="publication-title">
+            <a href="https://ieeexplore.ieee.org/document/11114068"
+               target="_blank" rel="noopener noreferrer">
+              AI-Driven Prescriptive Analytics for Hydrate Mitigation in Offshore Petroleum Production
+            </a>
+          </p>
+          <p class="publication-authors">M. A. Fernandes, R. O. Rabelo, E. Gildin, M. A. Sampaio</p>
+          <p class="publication-venue">IEEE International Conference on AI and Data Analytics (ICAD), 2025</p>
+        </li>
+
+        <li class="publication">
+          <p class="publication-title">
+            <a href="https://www.preprints.org/manuscript/202509.1717/v1"
+               target="_blank" rel="noopener noreferrer">
+              Machine Learning-Based Soft Sensors for Reliable Bottom-Hole Pressure Estimation
+            </a>
+          </p>
+          <p class="publication-authors">M. A. Fernandes, E. Gildin, M. A. Sampaio</p>
+          <p class="publication-venue">Preprint, 2025</p>
+        </li>
+
+        <li class="publication">
+          <p class="publication-title">
+            <a href="https://arxiv.org/abs/2508.18289"
+               target="_blank" rel="noopener noreferrer">
+              Data-driven models for production forecasting and decision supporting in petroleum reservoirs
+            </a>
+          </p>
+          <p class="publication-authors">M. A. Fernandes, M. M. Furlanetti, E. Gildin, M. A. Sampaio</p>
+          <p class="publication-venue">Preprint, 2025</p>
+        </li>
+
+        <li class="publication">
+          <p class="publication-title">
+            <a href="https://arxiv.org/abs/2507.01048"
+               target="_blank" rel="noopener noreferrer">
+              3W Dataset 2.0.0: a realistic and public dataset with rare undesirable real events in oil wells
+            </a>
+          </p>
+          <p class="publication-authors">R. E. Vaz Vargas, C. J. Munaro, M. A. Fernandes et al.</p>
+          <p class="publication-venue">Preprint, 2025</p>
+        </li>
+
+        <li class="publication">
+          <p class="publication-title">
+            <a href="https://ieeexplore.ieee.org/document/10903375"
+               target="_blank" rel="noopener noreferrer">
+              Data-driven Estimation of Flowing Bottom-Hole Pressure in Petroleum Wells using Long Short-Term Memory
+            </a>
+          </p>
+          <p class="publication-authors">M. A. Fernandes, E. Gildin, M. A. Sampaio</p>
+          <p class="publication-venue">IEEE International Conference on Machine Learning and Applications (ICMLA), 2024</p>
+        </li>
+
+        <li class="publication">
+          <p class="publication-title">
+            <a href="https://doi.org/10.4043/32950-MS"
+               target="_blank" rel="noopener noreferrer">
+              Data-Driven Workflow for Categorization of Brines Applied to a Pre-Salt Field
+            </a>
+          </p>
+          <p class="publication-authors">M. A. Fernandes, E. Gildin, M. A. Sampaio</p>
+          <p class="publication-venue">Offshore Technology Conference Brasil, 2023</p>
+        </li>
+
+        <li class="publication">
+          <p class="publication-title">
+            <a href="https://github.com/matfernan/matfernan.github.io/blob/main/Paper_ROG18_TransGas.pdf"
+               target="_blank" rel="noopener noreferrer">
+              Challenges of a Mature Onshore Field in the Transition to Natural Gas as the Main Fluid
+            </a>
+          </p>
+          <p class="publication-authors">M. A. Fernandes, F. T. A. Costa, N. H. S. Almeida</p>
+          <p class="publication-venue">Rio Oil &amp; Gas, 2018 · Available in Portuguese</p>
+        </li>
+
+        <li class="publication">
+          <p class="publication-title">
+            <a href="https://github.com/matfernan/matfernan.github.io/blob/main/Paper_ROG18_Knowledge.pdf"
+               target="_blank" rel="noopener noreferrer">
+              Knowledge Management in Petroleum Industry a Case Study for Petrobras/UO-SEAL
+            </a>
+          </p>
+          <p class="publication-authors">R. G. S. A. Fernandes, M. A. Fernandes</p>
+          <p class="publication-venue">Rio Oil &amp; Gas, 2018 · Available in Portuguese</p>
+        </li>
+
+        <li class="publication">
+          <p class="publication-title">
+            <a href="https://github.com/matfernan/matfernan.github.io/blob/main/Paper_ROG16_Multidisc.pdf"
+               target="_blank" rel="noopener noreferrer">
+              Multidisciplinary Vision is the Key to Making a High Stratigraphic and Structural Complexity Oil Field Profitable Under an Adverse Costs Scenario
+            </a>
+          </p>
+          <p class="publication-authors">F. T. A. Costa, F. A. M. Vila Nova, M. A. Fernandes</p>
+          <p class="publication-venue">Rio Oil &amp; Gas, 2016</p>
+        </li>
+
+        <li class="publication">
+          <p class="publication-title">
+            <a href="https://github.com/matfernan/matfernan.github.io/blob/main/Paper_ROG14_Fuzzy.pdf"
+               target="_blank" rel="noopener noreferrer">
+              Building Reservoir Quality Maps for a Geologically Complex Oilfield by using Fuzzy Logic and Kriging
+            </a>
+          </p>
+          <p class="publication-authors">M. A. Fernandes, F. A. M. Vila Nova, F. T. A. Costa, S. L. F. Furtado</p>
+          <p class="publication-venue">Rio Oil &amp; Gas, 2014 · Available in Portuguese</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="talks">
+      <h2 class="section-heading">Talks</h2>
+      <ul class="talk-list">
+        <li>“Machine Learning-Based Soft Sensors for Reliable Bottom-Hole Pressure Estimation in IWC Wells” — SPE Workshop: Integrated Intelligent Well Completion, Rio de Janeiro, 2025</li>
+        <li>“Data-driven Estimation of Flowing Bottom-Hole Pressure in Petroleum Wells using Long Short-Term Memory” — 18th U.S. National Congress on Computational Mechanics (USNCCM18), Chicago, 2025</li>
+        <li>“AI-Driven Prescriptive Analytics for Hydrate Mitigation in Offshore Petroleum Production” — IEEE International Conference on AI and Data Analytics (ICAD 2025), Medford, 2025</li>
+        <li>“Data-driven Estimation of Flowing Bottom-Hole Pressure in Petroleum Wells using Long Short-Term Memory” — IEEE International Conference on Machine Learning and Applications (ICMLA 2024), Miami, 2024</li>
+      </ul>
+    </section>
+
+    <section class="section" id="cv">
+      <h2 class="section-heading">CV &amp; Links</h2>
+      <ul class="link-list">
+        <li><a href="http://lattes.cnpq.br/2920827206617950" target="_blank" rel="noopener noreferrer">Curriculum Vitae (Currículo Lattes)</a></li>
+        <li><a href="https://www.linkedin.com/in/mateus-fernandes-b879a851/" target="_blank" rel="noopener noreferrer">LinkedIn profile</a></li>
+        <li><a href="https://scholar.google.com/citations?hl=pt-BR&amp;user=p2_aTCkAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar — full publication list</a></li>
+      </ul>
+    </section>
+
+    <section class="section" id="collaborators">
+      <h2 class="section-heading">Collaborators</h2>
+      <p class="section-intro">
+        Professionals I have collaborated with on research and innovation projects:
+      </p>
+      <ul class="collaborator-list">
+        <li>Prof. Marcio Augusto Sampaio Pinto — University of São Paulo (USP)</li>
+        <li>Prof. Eduardo Gildin — Texas A&amp;M University</li>
+        <li>Michael Miguel Furlanetti — Petrobras</li>
+        <li>Ricardo E. Vaz Vargas — Petrobras</li>
+        <li>Samia Lima Freire Furtado — Petrobras</li>
+        <li>Francisco Tadeu Alves da Costa — Petrobras (retired)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mateus de Araujo Fernandes. All rights reserved.</p>
+  </footer>
 </body>
 </html>
